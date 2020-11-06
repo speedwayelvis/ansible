@@ -1,0 +1,10 @@
+---
+- name: ALTERAR CONFIGURACAO RADIUS
+  connection: network_cli
+  gather_facts: false 
+  hosts: lab1
+
+  tasks:
+    - name: configure device with config
+      cli_config:
+        config: "{{ lookup('template', 'teste.j2') }}"

@@ -1,0 +1,39 @@
+---
+
+- name: VERIFICAR IOS DO HOMELAB
+  connection: network_cli 
+  gather_facts: false 
+  hosts: homelab
+
+  tasks: 
+    - name: Coletar versão do IOS
+      ios_facts:
+        gather_subset: interfaces
+        gather_network_resources: l2_interfaces
+        
+    - name: Mostrar os dados coletados
+      debug:
+        msg: '{{ item.key }}'
+      with_dict: '{{ ansible_net_interfaces }}'
+      when: item.value.type == 'Gigabit Ethernet'
+
+    - name: novo teste
+      ios_command:
+        commands:
+          - show running-config interface {{ item.key }}
+      with_dict: '{{ ansible_net_interfaces }}'
+      when: 
+        - item.value.type == 'Gigabit Ethernet'
+#        - result[0] | select('match', '^ switchport access.*') | list
+      register: retorno
+
+    - name: mostra variavel
+      debug:
+        msg: '{{ item.ansible_loop_var }}'
+      with_dict: '{{ retorno }}'
+
+    # - name: novo teste 2 
+    #   ios_command:
+    #     commands:
+    #       - show running-config interface GigabitEthernet0/47
+          

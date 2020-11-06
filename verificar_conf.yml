@@ -1,0 +1,14 @@
+---
+- name: Configurar
+  connection: network_cli
+  hosts: lab1
+
+  tasks:
+    - name: Verificar config
+      ios_command:
+        commands:  'show running-config | section radius'
+      register: teste
+
+    - name: Mostra resultado
+      debug:
+        msg: "{{ teste.stdout_lines }}"

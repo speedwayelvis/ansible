@@ -1,0 +1,14 @@
+[lab1]
+switch_casa ansible_host=192.168.15.111 ansible_user=teste ansible_password=cisco 
+
+[lab1:vars]
+ansible_network_os=ios
+arquivo=c2960-lanbasek9-mz.150-2.SE11_1.bin
+versao=15.0(2)SE11
+ansible_command_timeout=1200
+tftpserver=192.168.15.5
+checksum=81064ff93a36442ed4f5ad6be86c8ceb
+
+[homelab:children]
+lab1
+

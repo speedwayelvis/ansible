@@ -1,0 +1,50 @@
+---
+- name: ALTERAR CONFIGURACAO RADIUS
+  connection: network_cli
+  gather_facts: false 
+  hosts: lab1
+
+  tasks:
+    # - name: RETIRAR A CONFIGURAÇÃO ANTIGA
+    #   ios_config:
+    #     lines:
+    #       - no radius-server host 172.28.10.178 auth-port 1812 acct-port 1813
+    #       - no radius-server key 7 035D1E4E15202C43440B2E5044063A280C22280402392F0C25342750036418486143
+    
+    # - name: ADICIONAR OS SERVIDORES RADIUS E UM NOVO GRUPO
+    #   ios_config:
+    #     lines:
+    #       - radius server BMG323-ADM
+    #       - aaa group server radius ADM-RADIUS
+    #       - aaa authentication login ANSIBLE local
+    #       - aaa authentication login default group ADM-RADIUS local
+    #       - aaa authentication enable default group ADM-RADIUS enable
+    #       - aaa authorization exec default group ADM-RADIUS local
+
+    # - name: ADICIONAR AS CONFIGURACOES DO RADIUS ADM
+    #   ios_config:
+    #     lines:
+    #       - address ipv4 172.28.10.178 auth-port 1812 acct-port 1813
+    #       - timeout 5
+    #       - retransmit 5
+    #       - key 7 035D1E4E15202C43440B2E5044063A280C22280402392F0C25342750036418486143
+    #     parents: radius server BMG323-ADM
+
+    # - name: ATRIBUIR O SERVIDOR BMG323-ADM NO GRUPO ADM-RADIUS
+    #   ios_config:
+    #     lines: server name BMG323-ADM
+    #     parents: aaa group server radius ADM-RADIUS
+
+    # - name: SALVAR RUNNING PARA STARTUP QUANDO MODIFICADO
+    #   ios_config:
+    #     save_when: modified    
+
+    - name: TESTE
+      cli_command: 
+        command: 'verify /md5 flash:{{ arquivo }}'
+      register: teste
+
+    - name: check2
+      debug: 
+        msg: "Achou"
+      when: teste.stdout_lines[1] is search(checksum)

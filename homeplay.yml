@@ -1,0 +1,59 @@
+---
+
+- name: VERIFICAR IOS DO HOMELAB
+  connection: network_cli 
+  gather_facts: false 
+  hosts: homelab
+
+  tasks: 
+    - name: Coletar versão do IOS
+      ios_facts: 
+        gather_subset: min
+
+    - name: Verificar Versão
+      debug:
+        msg: "O DISPOSITIVO - {{ ansible_net_hostname }} CONTEM A VERSAO DO IOS {{ ansible_net_version }}"
+
+    - name: Verficar necessidade de atualização    
+      debug:
+        msg: "A VERSAO ATUAL DEVERÁ SER ATUALIZADA PARA {{ versao }}"
+      when: ansible_net_version != versao
+
+    - name: Copiar imagem via TFTP
+      cli_command: 
+        command: 'copy tftp: flash:' 
+        check_all: True 
+        prompt:
+          - 'Address or name of remote host' 
+          - 'Source filename' 
+          - 'Destination filename'
+        answer: 
+          - "{{tftpserver}}"
+          - "{{arquivo}}"
+          - "{{arquivo}}"
+      when: ansible_net_version != versao
+    
+    - name: TESTE
+      cli_command: 
+        command: 'verify /md5 flash:{{ arquivo }}'
+      register: teste
+    
+    - name: Alterar o boot system
+      ios_config:
+        commands:
+          - "boot system flash:{{arquivo}}"
+        save_when: always
+      when: 
+#        - ansible_net_version != versao
+        - teste.stdout_lines[1] is search(checksum)
+
+    - name: Recarregar o caramada legal
+      cli_command:
+        command: reload
+        prompt:
+          - confirm
+        answer:
+          - 'y'
+      when: 
+#        - ansible_net_version != versao
+        - teste.stdout_lines[1] is search(checksum)
