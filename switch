@@ -12,3 +12,4 @@ checksum=81064ff93a36442ed4f5ad6be86c8ceb
 [homelab:children]
 lab1
 
+[teste]
