@@ -1,0 +1,9 @@
+hostname {{ global.hostname }}
+
+{% for interface in global.interfaces %}
+    interface {{ interface }}
+    {% for int in interface %}
+        description {{ int }}
+    {% endfor %}
+{% endfor %}
+
