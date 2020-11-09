@@ -1,5 +1,5 @@
 [lab1]
-switch_casa ansible_host=10.1.1.200 ansible_user=teste ansible_password=teste ip-loopback=172.20.20.20/32
+switch_casa ansible_host=10.1.1.200 ansible_user=teste ansible_password=teste address=172.20.20.20/32
 
 
 [lab1:vars]
