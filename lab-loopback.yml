@@ -1,0 +1,13 @@
+---
+
+- name: Network LAB-EVE 
+  connection: network_cli 
+  gather_facts: false 
+  hosts: lab1 
+  tasks: 
+     - name: CONFIGURAR LOOPBACK 0
+       ios_config:
+        lines:
+         - ip address {{ ip-loopback }}
+
+        parents: interface loopback 0
