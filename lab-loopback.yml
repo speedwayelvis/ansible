@@ -5,14 +5,14 @@
   gather_facts: false 
   hosts: lab1 
   tasks: 
-     - name: CRIAR LOOPBACK 0
+     - name: CRIAR LOOPBACK 60
        ios_config:
         lines:
-         - interface loopback 0
+         - interface loopback 60
 
-     - name: CONFIGURAR LOOPBACK 0
+     - name: CONFIGURAR LOOPBACK 60
        ios_l3_interfaces:
          config:
-          - name: loopback 0
+          - name: loopback 60
             ipv4:
             - address: "{{ address }}"
