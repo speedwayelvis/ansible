@@ -1,5 +1,5 @@
 [lab1]
-switch_casa ansible_host=10.1.1.200 ansible_user=teste ansible_password=cisco 
+switch_casa ansible_host=10.1.1.200 ansible_user=teste ansible_password=teste 
 
 [lab1:vars]
 ansible_network_os=ios
