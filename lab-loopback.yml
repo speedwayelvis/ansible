@@ -11,7 +11,8 @@
          - interface loopback 0
 
      - name: CONFIGURAR LOOPBACK 0
-       ios_config:
-        lines:
-         - ip address {{ ip-loopback }} {{ mask }}
-        parents: interface loopback 0
+       ios_l3_interfaces:
+         config:
+          - name: loopback 0
+            ipv4:
+            - address: "{{ ip-loopback }}"
