@@ -13,15 +13,15 @@
       debug:
         msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }} {{arquivo}}" 
 
-    - name: COPY_FTP_IMAGE
-      cli_command: 
-        command: 'copy tftp: flash:' 
-        check_all: True 
-        prompt:
-          - 'Address or name of remote host' 
-          - 'Source filename' 
-          - 'Destination filename'
-        answer: 
-          - "{{tftpserver}}"
-          - "{{arquivo}}"
-          - "{{arquivo}}"
+    # - name: COPY_FTP_IMAGE
+    #   cli_command: 
+    #     command: 'copy tftp: flash:' 
+    #     check_all: True 
+    #     prompt:
+    #       - 'Address or name of remote host' 
+    #       - 'Source filename' 
+    #       - 'Destination filename'
+    #     answer: 
+    #       - "{{tftpserver}}"
+    #       - "{{arquivo}}"
+    #       - "{{arquivo}}"
