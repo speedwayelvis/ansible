@@ -15,4 +15,4 @@
          config:
           - name: loopback 0
             ipv4:
-            - address: "{{ ip-loopback }}"
+            - address: "{{ address }}"
