@@ -9,6 +9,7 @@
        ios_config:
         lines:
          - interface loopback 60
+         - no shutdown
 
      - name: CONFIGURAR LOOPBACK 60
        ios_l3_interfaces:
