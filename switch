@@ -1,5 +1,5 @@
 [lab1]
-switch_casa ansible_host=172.20.20.1 ansible_user=teste ansible_password=teste address=60.60.60.1/32
+switch_casa ansible_host=172.20.20.1 ansible_user=teste ansible_password=teste control=false
 
 
 [lab1:vars]
