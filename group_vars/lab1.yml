@@ -1,6 +1,0 @@
----
-global:
-  hostname: "{{ inventory_hostname }}"
-  interfaces: 
-    GigabitEthernet0/1:
-      desc: "Teste"
