@@ -1,2 +1,7 @@
 ---
-# tasks file for lab
+- name: Configura Link Secundario
+  ios_config:
+    lines: ip address 60.60.60.1 255.255.255.0
+    parents: interface loopback 60
+    before: interface loopback 60
+    when: link = "sec"
