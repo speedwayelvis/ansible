@@ -1,7 +1,8 @@
 ---
 - name: Configura Link Secundario
   ios_config:
-    lines: ip address {{ ip_add }} {{ mask }}
+    lines: 
+      - ip address {{ ip_add }} {{ mask }}
     parents: interface loopback 60
     before: interface loopback 60
 #teste
