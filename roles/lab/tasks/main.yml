@@ -5,11 +5,11 @@
       - ip address {{ ip_add }} {{ mask }}
     parents: interface loopback 60
     before: interface loopback 60
-    when: link = "sec"
+  when: link = "sec"
 
 - name: Configura Link Primario
   ios_config:
     lines:
       - no interface loopback 60
-    when: link = "pri"
+  when: link = "pri"
 #teste
