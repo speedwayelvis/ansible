@@ -1,3 +1,4 @@
 ---
 - name: configure Filial
   include_tasks: "{{ filial }}.yml"
+  hosts: "{{ filial }}"
