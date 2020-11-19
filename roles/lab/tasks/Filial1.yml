@@ -1,12 +1,12 @@
 ---
-- name: Configura Link Secundario
+- name: Criar interface loopback de Gatilho
   ios_config:
     lines: description {{ desc1 }}
     parents: interface loopback 65
     before: interface loopback 65
   when: link == "sec"
 
-- name: Configura Link Primario
+- name: Remove interface de Gatilho
   ios_config:
     lines: no interface loopback 65
   when: link == "pri"
