@@ -1,7 +1,5 @@
 ---
 - name: Configura Link Secundario
-  vars:
-    ansible_host: "177.1.1.200"
   ios_config:
     lines: description {{ desc1 }}
     parents: interface loopback 65
