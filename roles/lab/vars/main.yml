@@ -1,4 +1,4 @@
 ---
 # vars file for lab
-ip_add1: "60.60.60.1"
+desc1: "ANSIBLE INTERFACE PROJETO LAB"
 ip_add2: "70.70.70.1"
