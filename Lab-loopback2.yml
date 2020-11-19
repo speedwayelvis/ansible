@@ -3,6 +3,6 @@
 - name: Network LAB-EVE 
   connection: network_cli 
   gather_facts: false 
-  hosts: lab1 
+  hosts: "{{ filial }}"
   roles:
     - lab
