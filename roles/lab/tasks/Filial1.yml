@@ -1,5 +1,6 @@
 ---
 - name: Configura Link Secundario
+  hosts: RT_Filial1
   ios_config:
     lines: description {{ desc1 }}
     parents: interface loopback 65
