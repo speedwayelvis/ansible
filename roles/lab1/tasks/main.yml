@@ -6,3 +6,5 @@
 - name: Salvar Configurações Modificadas
   ios_config:
     save_when: modified
+  tags:
+    - wr
