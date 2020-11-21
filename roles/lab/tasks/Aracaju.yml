@@ -15,7 +15,5 @@
   - name: Incluindo role Configura hostname
     include_role:
         name: lab1
-    
-  - name: import WR
-    tags: wr
+
 
