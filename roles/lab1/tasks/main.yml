@@ -1,0 +1,8 @@
+---
+- name: Configura hostname LAB1
+  ios_config:
+    lines: hostname {{ inventory_hostname }}
+
+- name: Salvar Configurações Modificadas
+  ios_config:
+    save_when: modified
