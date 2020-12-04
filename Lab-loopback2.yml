@@ -6,3 +6,4 @@
   hosts: "{{ filial }}"
   roles:
     - lab
+    - mister
