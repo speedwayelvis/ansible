@@ -14,8 +14,8 @@
 - name: Alterar AS_PATH
   ios_config:
     diff_against: running
-    lines: set as-path {{ PATH }}
-    parents: route-map ARACAJU_IN permit 100
+    lines: as-path prepend last-as {{ PATH }}
+    parents: route-map ARACAJU_IN permit 10
 
 
 - name: ATUALIZANDO TABELA BGP.
