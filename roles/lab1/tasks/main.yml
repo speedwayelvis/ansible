@@ -11,12 +11,17 @@
     lines: set local-preference {{ LprefNumber }}
     parents: route-map ARACAJU_IN permit 50
 
+- name: Alterar AS_PATH
+  ios_config:
+    diff_against: running
+    lines: ip as-path access-list 100 permit {{ PATH }}
+
+
 - name: ATUALIZANDO TABELA BGP.
   ios_command:
       commands: 
         - clear ip bgp * soft in
-  when: asPath == 'Sim'
-  
+
 - name: Salvar Configurações Modificadas
   ios_config:
     save_when: modified
