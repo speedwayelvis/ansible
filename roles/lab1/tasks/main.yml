@@ -15,6 +15,7 @@
   ios_config:
     diff_against: running
     lines: set as-path {{ PATH }}
+    parents: route-map ARACAJU_IN permit 100
 
 
 - name: ATUALIZANDO TABELA BGP.
