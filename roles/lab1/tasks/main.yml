@@ -14,7 +14,7 @@
 - name: Alterar AS_PATH
   ios_config:
     diff_against: running
-    lines: as-path prepend last-as {{ ASPath }}
+    lines: set as-path prepend last-as {{ ASPath }}
     parents: route-map ARACAJU_IN permit 10
 
 
