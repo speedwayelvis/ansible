@@ -14,7 +14,7 @@
 - name: Alterar AS_PATH
   ios_config:
     diff_against: running
-    lines: ip as-path access-list 100 permit {{ PATH }}
+    lines: set as-path {{ PATH }}
 
 
 - name: ATUALIZANDO TABELA BGP.
