@@ -15,7 +15,8 @@
   ios_command:
       commands: 
         - clear ip bgp * soft in
-
+  when: asPath == 'Sim'
+  
 - name: Salvar Configurações Modificadas
   ios_config:
     save_when: modified
