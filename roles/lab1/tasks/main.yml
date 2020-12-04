@@ -3,10 +3,14 @@
   ios_config:
     lines: hostname {{ inventory_hostname }}
 
-- name: Altera atribuitos BGP LPref
+- name: Altera atribuitos BGP LOCAL PREF
   ios_config:
       lines: set local-preference {{ LprefNumber }}
       parents: route-map ARACAJU_IN permit 50
+
+- name: ATUALIZANDO TABELA BGP.
+  ios_config:
+      line: clear ip bgp * soft in
 
 - name: Salvar Configurações Modificadas
   ios_config:
