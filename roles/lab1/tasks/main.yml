@@ -11,12 +11,12 @@
     lines: set local-preference {{ LprefNumber }}
     parents: route-map ARACAJU_IN permit 50
 
-# - name: Alterar AS_PATH
-#   ios_config:
-#     diff_against: running
-#     lines: set as-path prepend last-as {{ ASPath }}
-#     parents: route-map ARACAJU_IN permit 10
-#   when: executa_as == 'Sim'
+- name: Alterar AS_PATH
+  ios_config:
+    diff_against: running
+    lines: set as-path prepend last-as {{ ASPath }}
+    parents: route-map ARACAJU_IN permit 10
+  when: executa_as == 'Sim'
 
 
 - name: ATUALIZANDO TABELA BGP.
