@@ -9,8 +9,8 @@
       parents: route-map ARACAJU_IN permit 50
 
 - name: ATUALIZANDO TABELA BGP.
-  ios_config:
-      line: clear ip bgp * soft in
+  ios_command:
+      commands: 'clear ip bgp * soft in'
 
 - name: Salvar Configurações Modificadas
   ios_config:
