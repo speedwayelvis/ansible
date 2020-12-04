@@ -13,7 +13,8 @@
 
 - name: ATUALIZANDO TABELA BGP.
   ios_command:
-      commands: 'clear ip bgp * soft in'
+      commands: 
+        - clear ip bgp * soft in
 
 - name: Salvar Configurações Modificadas
   ios_config:
