@@ -2,6 +2,7 @@
 - name: Configura hostname LAB1
   ios_config:
     lines: hostname {{ inventory_hostname }}
+  tags: hostnames
 
 - name: Altera atribuitos BGP LOCAL PREF
   ios_config:
