@@ -1,14 +1,15 @@
 ---
 - name: Configura hostname LAB1
   ios_config:
-    diff_against: intended
+    diff_against: running
     lines: hostname {{ inventory_hostname }}
   tags: hostnames
 
 - name: Altera atribuitos BGP LOCAL PREF
   ios_config:
-      lines: set local-preference {{ LprefNumber }}
-      parents: route-map ARACAJU_IN permit 50
+    diff_against: running
+    lines: set local-preference {{ LprefNumber }}
+    parents: route-map ARACAJU_IN permit 50
 
 - name: ATUALIZANDO TABELA BGP.
   ios_command:
