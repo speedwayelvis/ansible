@@ -1,0 +1,20 @@
+---
+
+- name: Altera atribuitos BGP LOCAL PREF
+  ios_config:
+    diff_against: running
+    lines: set local-preference {{ LprefNumber }}
+    parents: route-map ARACAJU_IN permit 50
+  tags: 
+    - lpref_link_1
+
+- name: ATUALIZANDO TABELA BGP.
+  ios_command:
+      commands: 
+        - clear ip bgp * soft in
+
+- name: Salvar Configurações Modificadas
+  ios_config:
+    save_when: modified
+  tags:
+    - wr
