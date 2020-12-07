@@ -1,4 +1,4 @@
 ---
 - name: Seleção de tarefas
   include_tasks: Lpref.yml
-  when: tags == link_1
+  tags: link_1s
