@@ -3,6 +3,6 @@
 - name: Network LAB1-EVE - BGP ATRIBUTOS
   connection: network_cli 
   gather_facts: false 
-  hosts: RT_1
+  hosts: {{ link }}
   roles:
     - lab1
