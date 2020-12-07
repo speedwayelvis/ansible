@@ -1,4 +1,4 @@
 ---
 
 - name: SELETOR DE LINK
-  inlcude_task: "{{ link }}.yml"
+  inlcude_tasks: "{{ link }}.yml"
