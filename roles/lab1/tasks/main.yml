@@ -1,4 +1,4 @@
 ---
 - name: Seleção de tarefas
   include_tasks: Lpref.yml
-  tags: link_1s
+  tags: link_1
