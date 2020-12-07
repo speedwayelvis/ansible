@@ -1,0 +1,18 @@
+---
+  name: VERIFICA CISCO ASA 
+  gather_facts: false
+  connection: network_cli
+  hosts: fwasa
+
+  collections:
+    - cisco.asa
+
+  tasks:
+    
+    - name: Gather all legacy facts
+      cisco.asa.asa_facts:
+        gather_subset: all
+ 
+    - name: imprime variaveis 
+      debug: 
+        msg: "O NOME DO EQUIPAMENTO {{ ansible_net_hostname }} "
