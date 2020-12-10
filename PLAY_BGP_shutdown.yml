@@ -9,8 +9,8 @@
   roles:
     - role: lab1
 
-# - include_role:
-#     name: lab
+- include_role:
+    name: lab
 
 - name: Run tasks/hostnames.yaml instead of 'main'
   include_role:
