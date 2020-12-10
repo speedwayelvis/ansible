@@ -1,0 +1,6 @@
+---
+- name: Configura hostname LAB1
+  ios_config:
+    diff_against: running
+    lines: hostname {{ inventory_hostname }}
+  tags: hostnames

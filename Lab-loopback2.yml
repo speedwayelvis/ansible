@@ -7,7 +7,3 @@
   roles:
     - role: lab
 
-- name: Incluindo role Configura hostnames
-  import_task:
-    name: RT_1.yml
-  tags: hostnames
