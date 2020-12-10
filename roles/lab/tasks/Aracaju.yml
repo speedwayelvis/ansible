@@ -9,13 +9,14 @@
 
   - name: Remove interface de Gatilho
     ios_config:
-      lines: no interface loopback 65
+      lines: shutdown
+      parents: interface loopback 65
     when: link == "Embratel"
 
-  # - name: Incluindo role Configura hostname
-  #   include_role:
-  #       name: lab1
-  #   tags: hostname
+  - name: Incluindo role Configura hostname
+    include_role:
+        name: lab1
+    tags: hostname
 
 
 
