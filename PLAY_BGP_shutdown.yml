@@ -4,8 +4,9 @@
   connection: network_cli 
   gather_facts: false 
   hosts: "{{ link }}"
+  tags: shut
+  
   roles:
     - role: lab1
       vars: 
         link2: 177.0.0.2
-      tags: shut
