@@ -12,8 +12,10 @@
       lines: no interface loopback 65
     when: link == "Embratel"
 
-  # - name: Incluindo role Configura hostname
-  #   include_role:
-  #       name: lab1
+  - name: Incluindo role Configura hostname
+    include_role:
+        name: lab1
+    tags: hostname
+
 
 
