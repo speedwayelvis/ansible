@@ -4,4 +4,3 @@
     diff_against: running
     lines: hostname {{ ansible_hostname }}
   tags: hostnames
-  when: ansible_hostname is defined
