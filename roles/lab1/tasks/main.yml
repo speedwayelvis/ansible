@@ -2,6 +2,7 @@
 
 - name: SELETOR DE LINK
   include_tasks: "{{ link }}.yml"
+  when: bgp_shut is not defined
 
 - name: EXECUTANDO TAREFA SHUTDOWN
   import_tasks: "BGP_shutdown.yml"
