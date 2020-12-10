@@ -11,7 +11,7 @@
 - name: Sessão BGP - NO Shutdown
   ios_config:
     diff_against: running
-    lines: neighbor {{ link2 }} no shutdown
+    lines: no neighbor {{ link2 }} shutdown
     parents: router bgp 100
   when: bgp_shut == 'Não'
   tags: shut
