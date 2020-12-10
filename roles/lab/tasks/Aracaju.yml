@@ -15,6 +15,6 @@
 
   - name: Import tasks from hostnames.yml
     import_tasks: hostnames.yml
-
-
+    tags: hostnames
+    
 
