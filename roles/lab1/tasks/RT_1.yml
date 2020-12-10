@@ -20,7 +20,7 @@
 
 - name: Remover AS_PATH
   ios_config:
-    diff_against: running
+    # diff_against: running
     lines: no set as-path prepend last-as
     parents: route-map RT_1 permit 10
   when: executa_as == 'Sim' and  ASPath == 'none'
