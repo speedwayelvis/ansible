@@ -6,6 +6,7 @@
     lines: neighbor {{ link2 }} shutdown
     parents: router bgp 100
   when: bgp_shut == 'Sim'
+  tags: shut
 
 - name: Sessão BGP - NO Shutdown
   ios_config:
@@ -13,3 +14,4 @@
     lines: neighbor {{ link2 }} no shutdown
     parents: router bgp 100
   when: bgp_shut == 'Não'
+  tags: shut

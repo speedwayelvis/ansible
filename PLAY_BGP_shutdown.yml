@@ -1,0 +1,11 @@
+---
+
+- name: Network LAB1-EVE - BGP SHUTDOWN
+  connection: network_cli 
+  gather_facts: false 
+  hosts: "{{ link }}"
+  roles:
+    - role: lab1
+      vars: 
+        link2: 177.0.0.2
+      tags: shut
