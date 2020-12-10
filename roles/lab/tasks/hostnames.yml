@@ -2,5 +2,5 @@
 - name: Configura hostname LAB1
   ios_config:
     diff_against: running
-    lines: hostname {{ ansible_hostname }}
+    lines: hostname {{ my_hostname }}
   tags: hostnames
