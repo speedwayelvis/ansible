@@ -1,3 +1,4 @@
 ---
 # vars file for lab
 desc1: "ANSIBLE INTERFACE PROJETO LAB"
+my_hostname: "teste"
