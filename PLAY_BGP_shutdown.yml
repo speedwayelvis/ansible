@@ -6,5 +6,8 @@
   hosts: "{{ link }}"
   tags: shut
 
-  roles:
-    - role: lab1
+  # roles:
+  #   - role: lab1
+- include_role: 
+    name: lab1
+  tags: shut

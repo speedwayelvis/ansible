@@ -16,5 +16,5 @@
       lines: no neighbor {{ neighbor }} shutdown
       parents: router bgp 100
     when: bgp_shut == 'Não'
-  - tags: 
-    - shut
+  tags:
+  - shut
