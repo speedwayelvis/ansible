@@ -28,6 +28,7 @@ Routers:
       ansible_user: teste 
       ansible_password: teste
       neighbor: 177.0.0.2
+      my_hostname: RT_2
 
   vars:
     ansible_network_os: ios
