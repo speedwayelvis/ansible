@@ -6,10 +6,9 @@
 
 - name: EXECUTANDO TAREFA SHUTDOWN
   import_tasks: "BGP_shutdown.yml"
+  tags: shut
   when: bgp_shut is defined
 
-# - include_role:
-#     name: lab
 
 - name: Run tasks/hostnames.yaml instead of 'main'
   include_role:
