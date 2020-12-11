@@ -1,17 +1,17 @@
 ---
-
-- name: Sessão BGP - Shutdown
+tasks:
+- block:
+  tags: shut
+  - name: Sessão BGP - Shutdown
   ios_config:
     diff_against: running
     lines: neighbor {{ neighbor }} shutdown
     parents: router bgp 100
   when: bgp_shut == 'Sim'
-  tags: shut
 
-- name: Sessão BGP - NO Shutdown
-  ios_config:
-    diff_against: running
-    lines: no neighbor {{ neighbor }} shutdown
-    parents: router bgp 100
-  when: bgp_shut == 'Não'
-  tags: shut
+  - name: Sessão BGP - NO Shutdown
+    ios_config:
+      diff_against: running
+      lines: no neighbor {{ neighbor }} shutdown
+      parents: router bgp 100
+    when: bgp_shut == 'Não'

@@ -2,9 +2,7 @@
 
   - name: Criar interface loopback de Gatilho
     ios_config:
-      lines: 
-        - description {{ desc1 }}
-        - no shutdown
+      lines: description {{ desc1 }}, no shutdown
       parents: interface loopback 65
       before: interface loopback 65
     when: link == "Outra"
