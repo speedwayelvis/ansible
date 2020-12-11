@@ -1,14 +1,11 @@
 ---
-
 - block:
-    
   - name: Sessão BGP - Shutdown
     ios_config:
       diff_against: running
       lines: neighbor {{ neighbor }} shutdown
       parents: router bgp 100
     when: bgp_shut == 'Sim'
-
 
   - name: Sessão BGP - NO Shutdown
     ios_config:
