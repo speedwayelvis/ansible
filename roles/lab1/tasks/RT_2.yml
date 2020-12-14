@@ -4,41 +4,43 @@
 #     diff_against: running
 #     lines: hostname {{ inventory_hostname }}
 #   tags: hostnames
+- block:
 
-- name: Altera atribuitos BGP LOCAL PREF
-  ios_config:
-    diff_against: running
-    lines: set local-preference {{ LprefNumber }}
-    parents: route-map ARACAJU_IN permit 50
+  - name: Altera atribuitos BGP LOCAL PREF
+    ios_config:
+      diff_against: running
+      lines: set local-preference {{ LprefNumber }}
+      parents: route-map ARACAJU_IN permit 50
 
-
-- name: Alterar AS_PATH
-  ios_config:
-    diff_against: running
-    lines: set as-path prepend last-as {{ ASPath }}
-    parents: route-map ARACAJU_IN permit 100
-  when: executa_as == 'Sim' and  ASPath != 'none'
-
-
-- name: Remover AS_PATH
-  ios_config:
-    diff_against: running
-    lines: no set as-path prepend last-as
-    parents: route-map ARACAJU_IN permit 10
-  when: executa_as == 'Sim' and  ASPath == 'none'
+  - name: Alterar AS_PATH
+    ios_config:
+      diff_against: running
+      lines: set as-path prepend last-as {{ ASPath }}
+      parents: route-map ARACAJU_IN permit 100
+    when: executa_as == 'Sim' and  ASPath != 'none'
 
 
-- name: INCLUIR PREFIX LIST
-  include_tasks: prefix_list.yml
-  when: net_prefix != '' and executa_as == 'Sim'
+  - name: Remover AS_PATH
+    ios_config:
+      diff_against: running
+      lines: no set as-path prepend last-as
+      parents: route-map ARACAJU_IN permit 10
+    when: executa_as == 'Sim' and  ASPath == 'none'
 
 
-- name: ATUALIZANDO TABELA BGP.
-  ios_command:
-      commands: 
-        - clear ip bgp * soft in
+  - name: INCLUIR PREFIX LIST
+    include_tasks: prefix_list.yml
+    when: net_prefix != '' and executa_as == 'Sim'
 
 
-- name: Salvar Configurações Modificadas
-  ios_config:
-    save_when: modified
+  - name: ATUALIZANDO TABELA BGP.
+    ios_command:
+        commands: 
+          - clear ip bgp * soft in
+
+
+  - name: Salvar Configurações Modificadas
+    ios_config:
+      save_when: modified
+      
+  tags: atributos 
