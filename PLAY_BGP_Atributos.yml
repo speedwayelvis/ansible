@@ -11,7 +11,7 @@
     include_role:
       name: lab1
       tasks_from: "{{ link }}"
-    # tags: atributos
+    tags: atributos
         
 
 
