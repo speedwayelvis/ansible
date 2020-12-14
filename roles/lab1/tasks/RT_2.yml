@@ -28,8 +28,10 @@
     when: executa_as == 'Sim' and  ASPath == 'none'
     tags: atributos
 
-  - name: INCLUIR PREFIX LIST
-    include_tasks: prefix_list.yml
+  - name: Adicionar registro Prefix_list
+    ios_config:
+      lines: ip prefix-list foo permit {{ net_prefix }}
+      match: line
     when: net_prefix != '' and executa_as == 'Sim'
     tags: atributos
 
