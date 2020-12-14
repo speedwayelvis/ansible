@@ -6,6 +6,6 @@
   hosts: "{{ link }}"
 
   tasks:
-  - include_role: 
+  - import_role: 
       name: lab1 
     tags: atributos

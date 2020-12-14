@@ -1,11 +1,11 @@
 ---
 
   - name: SELETOR DE LINK
-    include_tasks: "{{ link }}.yml"
+    import_tasks: "{{ link }}.yml"
     # when: bgp_shut is not defined
     tags: atributos
 
   - name: EXECUTANDO TAREFA SHUTDOWN
-    include_tasks: "BGP_shutdown.yml"
+    import_tasks: "BGP_shutdown.yml"
     # when: bgp_shut is defined 
     tags: shut 
