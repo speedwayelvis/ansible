@@ -4,7 +4,6 @@
 #     diff_against: running
 #     lines: hostname {{ inventory_hostname }}
 #   tags: hostnames
-- block:
 
   - name: Altera atribuitos BGP LOCAL PREF
     ios_config:
@@ -27,7 +26,6 @@
       parents: route-map ARACAJU_IN permit 10
     when: executa_as == 'Sim' and  ASPath == 'none'
 
-
   - name: INCLUIR PREFIX LIST
     include_tasks: prefix_list.yml
     when: net_prefix != '' and executa_as == 'Sim'
@@ -42,6 +40,3 @@
   - name: Salvar Configurações Modificadas
     ios_config:
       save_when: modified
-
-  tags: 
-    - atributos 
