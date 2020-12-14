@@ -6,10 +6,14 @@
   hosts: "{{ link }}"
 
   tasks:
-    - name: include task atributos 
+    - name: Apply tags to tasks within included file
       include_role:
-        name: lab1 
-        tasks_from: "{{ link }}"
+        name: lab1
+        apply:
+          tags:
+            - atributos
+      tags:
+        - always
         
   
 
