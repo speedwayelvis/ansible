@@ -8,7 +8,7 @@
   tasks:
 
   - name: Run tasks/other.yaml instead of 'main'
-    include_role:
+    import_role:
       name: lab1
       tasks_from: "{{ link }}"
     tags: atributos
