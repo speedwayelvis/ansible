@@ -5,5 +5,8 @@
   gather_facts: false 
   hosts: "{{ link }}"
   roles:
-    - role: lab1 
+
+  tasks:
+  - include_role: lab1 
+    apply:
       tags: atributos
