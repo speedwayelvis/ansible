@@ -10,7 +10,7 @@
       diff_against: running
       lines: set local-preference {{ LprefNumber }}
       parents: route-map ARACAJU_IN permit 50
-      tags: atributos
+    tags: atributos
     
   - name: Alterar AS_PATH
     ios_config:
