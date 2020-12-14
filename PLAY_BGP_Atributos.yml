@@ -5,4 +5,5 @@
   gather_facts: false 
   hosts: "{{ link }}"
   roles:
-    - lab1
+    - role: lab1 
+      tags: atributos
