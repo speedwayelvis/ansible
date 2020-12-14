@@ -3,13 +3,15 @@
 - name: SELETOR DE LINK
   import_tasks: "{{ link }}.yml"
   # when: bgp_shut is not defined
-  tags: atributos
+  tags: 
+    - atributos
 
 - name: EXECUTANDO TAREFA SHUTDOWN
   import_tasks: "BGP_shutdown.yml"
   # when: bgp_shut is defined 
-  tags: shut
-  
+  tags: 
+    - shut
+
 - name: Run tasks/hostnames.yaml instead of 'main'
   include_role:
     name: lab
