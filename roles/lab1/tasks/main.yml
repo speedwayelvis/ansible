@@ -8,6 +8,9 @@
   import_tasks: "BGP_shutdown.yml"
   when: bgp_shut is defined
 
+- name: PREFIX-LIST TESTE
+  include_tasks: pn_prefix.yml
+
 
 - name: Run tasks/hostnames.yaml instead of 'main'
   include_role:
