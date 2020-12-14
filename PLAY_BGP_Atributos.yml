@@ -5,6 +5,10 @@
   gather_facts: false 
   hosts: "{{ link }}"
 
-  roles:
-    - role: lab1 
-      tags: atributos 
+  tasks:
+    - name: include task atributos 
+      include_tasks: "{{ link }}.yml"
+  
+
+
+    
