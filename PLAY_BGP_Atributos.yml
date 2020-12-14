@@ -5,17 +5,12 @@
   gather_facts: false 
   hosts: "{{ link }}"
 
-  tasks:
-    - name: Apply tags to tasks within included file
-      include_role:
-        name: lab1
-        apply:
-          tags:
-            - atributos
+  roles:
+    - role: lab1
       tags:
-        - always
+        - atributos
         
-  
+
 
 
     
