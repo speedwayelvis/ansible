@@ -4,7 +4,7 @@
 #     diff_against: running
 #     lines: hostname {{ inventory_hostname }}
 #   tags: hostnames
-
+- block:
   - name: Altera atribuitos BGP LOCAL PREF
     ios_config:
       diff_against: running
@@ -40,3 +40,4 @@
   - name: Salvar Configurações Modificadas
     ios_config:
       save_when: modified
+  tags: atributos 
