@@ -3,10 +3,7 @@
   - name: SELETOR DE LINK
     include_tasks: "{{ link }}.yml"
     # when: bgp_shut is not defined
-    args:
-      apply:
-        tags:
-          - atributos
+    tags: atributos
 
   - name: EXECUTANDO TAREFA SHUTDOWN
     include_tasks: "BGP_shutdown.yml"
