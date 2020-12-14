@@ -7,7 +7,10 @@
 
   tasks:
     - name: include task atributos 
-      include_tasks: "{{ link }}.yml"
+      include_role:
+        name: lab1 
+        tasks_from: "{{ link }}"
+        
   
 
 
