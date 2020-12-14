@@ -4,3 +4,4 @@
   ios_config:
     lines: ip prefix-list foo permit {{ net_prefix }}
     match: line
+  

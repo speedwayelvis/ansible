@@ -10,6 +10,7 @@
 
 - name: CONFIGURANDO PREFIX LIST
   include_tasks: prefix_list.yml
+  when: net_prefix is defined
 
 - name: Run tasks/hostnames.yaml instead of 'main'
   include_role:
