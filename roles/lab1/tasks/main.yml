@@ -6,11 +6,7 @@
 
 - name: EXECUTANDO TAREFA SHUTDOWN
   import_tasks: "BGP_shutdown.yml"
-  when: bgp_shut is defined
-
-- name: CONFIGURANDO PREFIX LIST
-  include_tasks: prefix_list.yml
-  when: net_prefix is defined
+  when: bgp_shut is defined 
 
 - name: Run tasks/hostnames.yaml instead of 'main'
   include_role:
