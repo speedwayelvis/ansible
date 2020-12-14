@@ -4,6 +4,8 @@
   connection: network_cli 
   gather_facts: false 
   hosts: "{{ link }}"
-  roles:
-    - role: lab1 
-      tags: atributos
+
+  tasks:
+  - include_role: 
+      name: lab1
+    tags: atributos
