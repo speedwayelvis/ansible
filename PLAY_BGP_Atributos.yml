@@ -6,4 +6,4 @@
   hosts: "{{ link }}"
   roles:
     - role: lab1 
-      tags: atributos
+  tags: atributos
