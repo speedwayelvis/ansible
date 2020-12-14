@@ -6,7 +6,8 @@
   hosts: "{{ link }}"
 
   tasks:
-    - include_role: 
-      name: lab1 
+    - name: INCLUDE ROLE
+      include_role: lab1 
       apply:
-      tags: atributos
+        tags: 
+        - atributos
