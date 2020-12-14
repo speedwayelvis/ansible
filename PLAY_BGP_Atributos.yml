@@ -8,6 +8,7 @@
   tasks:
     - name: INCLUDE ROLE
       include_role: lab1 
-      apply:
-        tags: 
-        - atributos
+        apply:
+          tags: 
+            - atributos
+      tags: atributos 
