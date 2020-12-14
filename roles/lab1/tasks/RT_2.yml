@@ -1,9 +1,9 @@
 ---
-- name: Configura hostname LAB1
-  ios_config:
-    diff_against: running
-    lines: hostname {{ inventory_hostname }}
-  tags: hostnames
+# - name: Configura hostname LAB1
+#   ios_config:
+#     diff_against: running
+#     lines: hostname {{ inventory_hostname }}
+#   tags: hostnames
 
 - name: Altera atribuitos BGP LOCAL PREF
   ios_config:
@@ -15,7 +15,7 @@
   ios_config:
     diff_against: running
     lines: set as-path prepend last-as {{ ASPath }}
-    parents: route-map ARACAJU_IN permit 10
+    parents: route-map ARACAJU_IN permit 100
   when: executa_as == 'Sim' and  ASPath != 'none'
 
 - name: Remover AS_PATH
