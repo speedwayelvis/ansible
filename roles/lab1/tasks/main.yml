@@ -8,3 +8,4 @@
   - name: EXECUTANDO TAREFA SHUTDOWN
     include_tasks: "BGP_shutdown.yml"
     # when: bgp_shut is defined 
+    tags: shut 
