@@ -1,7 +1,7 @@
 ---
 
 - name: prefix list network add
-  pn_prefix_list_network:
+  pn_prefix_list:
     pn_cliswitch: "sw01"
     pn_name: "foo"
     pn_network: "172.16.3.1"
