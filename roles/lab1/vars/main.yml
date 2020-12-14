@@ -2,4 +2,4 @@
 
 LprefNumber: 200
 
-net_prefix: "192.168.10.0/24"
+net_prefix: "192.168.30.0/24"
