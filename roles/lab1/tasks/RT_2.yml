@@ -10,7 +10,7 @@
     diff_against: running
     lines: set local-preference {{ LprefNumber }}
     parents: route-map ARACAJU_IN permit 50
-  tags: atributos
+
 
 - name: Alterar AS_PATH
   ios_config:
@@ -18,7 +18,7 @@
     lines: set as-path prepend last-as {{ ASPath }}
     parents: route-map ARACAJU_IN permit 100
   when: executa_as == 'Sim' and  ASPath != 'none'
-  tags: atributos
+
 
 - name: Remover AS_PATH
   ios_config:
@@ -26,22 +26,19 @@
     lines: no set as-path prepend last-as
     parents: route-map ARACAJU_IN permit 10
   when: executa_as == 'Sim' and  ASPath == 'none'
-  tags: atributos
+
 
 - name: INCLUIR PREFIX LIST
   include_tasks: prefix_list.yml
   when: net_prefix != '' and executa_as == 'Sim'
-  tags: atributos
+
 
 - name: ATUALIZANDO TABELA BGP.
   ios_command:
       commands: 
         - clear ip bgp * soft in
-  tags: atributos
+
 
 - name: Salvar Configurações Modificadas
   ios_config:
     save_when: modified
-  tags:
-    - atributos
-    
