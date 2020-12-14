@@ -1,4 +1,5 @@
 ---
+
 - block:
   - name: Sessão BGP - Shutdown
     ios_config:
