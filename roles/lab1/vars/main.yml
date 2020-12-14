@@ -1,3 +1,5 @@
 ---
 
 LprefNumber: 200
+
+net_prefix: "192.168.20.0/24"

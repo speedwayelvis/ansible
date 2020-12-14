@@ -1,0 +1,6 @@
+---
+
+- name: Adicionar registro Prefix_list
+  ios_config:
+    lines: ip prefix_list foo permit {{ net_prefix }}
+    match: line
