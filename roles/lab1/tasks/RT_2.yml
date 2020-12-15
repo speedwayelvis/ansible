@@ -30,6 +30,7 @@
 
   - name: IMPORT PREFIX
     import_tasks: "prefix_list.yml"
+    tags: atributos
 
   # - name: Adicionar registro Prefix_list
   #   ios_config:
