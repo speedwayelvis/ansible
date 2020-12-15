@@ -30,6 +30,7 @@
 
   - name: IMPORT PREFIX
     import_tasks: "prefix_list.yml"
+    when: net_prefix != '' and executa_as == 'Sim'
     tags: atributos
 
   # - name: Adicionar registro Prefix_list
