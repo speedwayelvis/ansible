@@ -28,12 +28,15 @@
     when: executa_as == 'Sim' and  ASPath == 'none'
     tags: atributos
 
-  - name: Adicionar registro Prefix_list
-    ios_config:
-      lines: ip prefix-list foo permit {{ net_prefix }}
-      match: line
-    when: net_prefix != '' and executa_as == 'Sim'
-    tags: atributos
+  - name: IMPORT PREFIX
+    import_tasks: "Prefix_list.yml"
+
+  # - name: Adicionar registro Prefix_list
+  #   ios_config:
+  #     lines: ip prefix-list foo permit {{ net_prefix }}
+  #     match: line
+  #   when: net_prefix != '' and executa_as == 'Sim'
+  #   tags: atributos
 
   - name: ATUALIZANDO TABELA BGP.
     ios_command:
