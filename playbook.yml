@@ -11,7 +11,7 @@
   
     - name: Display the config 
       debug:
-        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }} {{arquivo}}" 
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}" 
 
     # - name: COPY_FTP_IMAGE
     #   cli_command: 
