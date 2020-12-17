@@ -15,4 +15,4 @@
   
       - name: imprime variaveis 
         debug: 
-          msg: "O NOME DO EQUIPAMENTO {{ ansible_net_hostname }} modelo {{ ansible_net_model }}"
+          msg: "O NOME DO EQUIPAMENTO {{ ansible_net_hostname }}"
