@@ -1,0 +1,15 @@
+---
+
+- name: Network LAB - AS-PATH - REGEX 
+  connection: network_cli 
+  gather_facts: false 
+  hosts: RT_2
+  vars: 
+    - regex: "6565"
+
+  tasks:
+  - name: Adicionar registro as_path
+    ios_config:
+      lines: ip as-path access-list 10 permit ^{{ regex }}_
+      match: line
+    loop: "{{ regex }}"
