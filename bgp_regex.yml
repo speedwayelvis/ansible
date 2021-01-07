@@ -9,5 +9,4 @@
   - name: Adicionar registro as_path
     ios_config:
       lines: ip as-path access-list 10 permit ^{{ item }}_
-      state: present
     loop: "{{ regex }}"
