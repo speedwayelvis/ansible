@@ -10,5 +10,5 @@
     ios_config:
       lines: ip as-path access-list 10 permit _{{ item }}$
       replace: block
-      match: exact
+      match: strict
     loop: "{{ regex }}"
