@@ -11,4 +11,5 @@
       lines: ip as-path access-list 10 permit _{{ item }}$
       replace: block
       match: strict
+      before: no ip as-path access-list 10
     loop: "{{ regex }}"
