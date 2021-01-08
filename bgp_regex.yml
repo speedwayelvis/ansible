@@ -8,5 +8,5 @@
   tasks:
   - name: Adicionar registro as_path
     ios_config:
-      lines: ip as-path access-list 10 permit ^{{ item }}_
+      lines: ip as-path access-list 10 permit _{{ item }}$
     loop: "{{ regex }}"
