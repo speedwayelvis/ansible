@@ -6,4 +6,4 @@
   tasks:
   - name: Anunciar Prefixos Nacionais
     ios_config:
-      lines: network {{ BGP_Net }} route-map {{ RMAP_Comm }}
+      lines: network {{ BGP_Net }} route-map {{ RMAP }}
