@@ -1,7 +1,7 @@
 - name: Network LAB - ANUNCIOS
   connection: network_cli 
   gather_facts: false 
-  hosts: RT_1
+  hosts: RT_2
 
   tasks:
   - name: Anunciar Prefixos Nacionais com comunidades
