@@ -6,7 +6,7 @@
   tasks:
   - name: Anunciar Prefixos Nacionais
     ios_config:
-      lines: network {{ BGP_Net }} route-map {{ RMAP }}
+      lines: network {{ BGP_Net }} route-map {{ RMap_BLK-NAC }}
       parents: 
           - router bgp 100
           - address-family ipv4
