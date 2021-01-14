@@ -1,47 +1,43 @@
 ---
-Routers:
-  hosts: 
-    RT_1:
-      ansible_host: 172.20.20.1
-      ansible_user: teste 
-      ansible_password: teste
-      Rmap_nac: 'BLK-NAC1'
-      RMap: 'Rmap_OUT'
-      RSeq: '10'
+all:
+  ansible_user: teste 
+  ansible_password: !vault |
+            $ANSIBLE_VAULT;1.2;AES256;senhaRT1
+            34323032633634333766386433646462376334633762383338633134656461663664653338353261
+            6462646366613533376634343731323030613134633565390a633332383635653166313333356561
+            64393230323732343965306230633432623235643261633965323365633766336233316430366463
+            3263646439636365320a653930386333343933396133396330633836343138646663666566643632
+            6539
+  
+  Routers:
+    hosts: 
+      RT_1:
+        ansible_host: 172.20.20.1
+        ansible_user: teste 
+        ansible_password: teste
+        Rmap_nac: 'BLK-NAC1'
+        RMap: 'Rmap_OUT'
+        RSeq: '10'
 
-    link_embratel:
-      ansible_host: 172.20.20.1
-      ansible_user: teste 
-      ansible_password: teste
-      neighbor: 177.1.1.2
+      link_embratel:
+        ansible_host: 172.20.20.1
+        neighbor: 177.1.1.2
 
-    link_vogel:
-      ansible_host: 172.20.20.1
-      ansible_user: teste 
-      ansible_password: teste
-      neighbor: 172.5.5.5
-    
-    RT_2:
-      ansible_host: 172.10.10.1
-      ansible_user: teste 
-      ansible_password: !vault |
-                $ANSIBLE_VAULT;1.2;AES256;senhaRT1
-                34323032633634333766386433646462376334633762383338633134656461663664653338353261
-                6462646366613533376634343731323030613134633565390a633332383635653166313333356561
-                64393230323732343965306230633432623235643261633965323365633766336233316430366463
-                3263646439636365320a653930386333343933396133396330633836343138646663666566643632
-                6539
-      Rmap_nac: 'BLK-NAC'
-      RMap: 'Rmap_OUT'
-      RSeq: '10'
+      link_vogel:
+        ansible_host: 172.20.20.1
+        neighbor: 172.5.5.5
+      
+      RT_2:
+        ansible_host: 172.10.10.1
+        Rmap_nac: 'BLK-NAC'
+        RMap: 'Rmap_OUT'
+        RSeq: '10'
 
-    link_outra:
-      ansible_host: 172.10.10.1
-      ansible_user: teste 
-      ansible_password: teste
-      neighbor: 177.0.0.2
-      my_hostname: RT_2
+      link_outra:
+        ansible_host: 172.10.10.1
+        neighbor: 177.0.0.2
+        my_hostname: RT_2
 
-  vars:
-    ansible_network_os: ios
+    vars:
+      ansible_network_os: ios
     
