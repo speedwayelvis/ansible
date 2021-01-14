@@ -13,8 +13,6 @@ Routers:
   hosts: 
     RT_1:
       ansible_host: 172.20.20.1
-      ansible_user: teste 
-      ansible_password: teste
       Rmap_nac: 'BLK-NAC1'
       RMap: 'Rmap_OUT'
       RSeq: '10'
