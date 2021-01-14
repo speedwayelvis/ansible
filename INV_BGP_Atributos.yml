@@ -9,35 +9,35 @@ all:
             3263646439636365320a653930386333343933396133396330633836343138646663666566643632
             6539
   
-  Routers:
-    hosts: 
-      RT_1:
-        ansible_host: 172.20.20.1
-        ansible_user: teste 
-        ansible_password: teste
-        Rmap_nac: 'BLK-NAC1'
-        RMap: 'Rmap_OUT'
-        RSeq: '10'
+Routers:
+  hosts: 
+    RT_1:
+      ansible_host: 172.20.20.1
+      ansible_user: teste 
+      ansible_password: teste
+      Rmap_nac: 'BLK-NAC1'
+      RMap: 'Rmap_OUT'
+      RSeq: '10'
 
-      link_embratel:
-        ansible_host: 172.20.20.1
-        neighbor: 177.1.1.2
+    link_embratel:
+      ansible_host: 172.20.20.1
+      neighbor: 177.1.1.2
 
-      link_vogel:
-        ansible_host: 172.20.20.1
-        neighbor: 172.5.5.5
-      
-      RT_2:
-        ansible_host: 172.10.10.1
-        Rmap_nac: 'BLK-NAC'
-        RMap: 'Rmap_OUT'
-        RSeq: '10'
-
-      link_outra:
-        ansible_host: 172.10.10.1
-        neighbor: 177.0.0.2
-        my_hostname: RT_2
-
-    vars:
-      ansible_network_os: ios
+    link_vogel:
+      ansible_host: 172.20.20.1
+      neighbor: 172.5.5.5
     
+    RT_2:
+      ansible_host: 172.10.10.1
+      Rmap_nac: 'BLK-NAC'
+      RMap: 'Rmap_OUT'
+      RSeq: '10'
+
+    link_outra:
+      ansible_host: 172.10.10.1
+      neighbor: 177.0.0.2
+      my_hostname: RT_2
+
+  vars:
+    ansible_network_os: ios
+  
