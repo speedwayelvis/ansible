@@ -7,4 +7,6 @@
   - name: Anunciar Prefixos Nacionais
     ios_config:
       lines: network {{ BGP_Net }} route-map {{ RMAP }}
-      parents: router bgp 100
+      parents: 
+          - router bgp 100
+          - address-family ipv4
