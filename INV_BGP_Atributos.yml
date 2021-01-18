@@ -13,14 +13,14 @@ Routers:
   hosts: 
     RT_1:
       ansible_host: 172.20.20.1
-      Rmap_nac: 'BLK-NAC1'
+      Rmap_nac: 'BLK-NAC'
       RMap: 'Rmap_OUT'
       RSeq: '10'
 
     link_embratel:
       ansible_host: 172.20.20.1
       neighbor: 177.1.1.2
-      Rmap_nac: 'BLK-NAC1'
+      Rmap_nac: 'BLK-NAC'
       RMap: 'Rmap_OUT'
       RSeq: '10'
 
