@@ -9,7 +9,6 @@
       lines: network {{ BGP_Net }} route-map {{ anuncio }} 
       parents: 
           - router bgp 100
-          - address-family ipv4
     when: tipo == 'nacional'
 
   # - name: Anunciar Prefixos Nacionais com comunidades
@@ -25,6 +24,5 @@
       lines: network {{ BGP_Net }}  
       parents: 
           - router bgp 100
-          - address-family ipv4
     when: tipo == 'none'
 
