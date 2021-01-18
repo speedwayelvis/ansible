@@ -20,6 +20,9 @@ Routers:
     link_embratel:
       ansible_host: 172.20.20.1
       neighbor: 177.1.1.2
+      Rmap_nac: 'BLK-NAC1'
+      RMap: 'Rmap_OUT'
+      RSeq: '10'
 
     link_vogel:
       ansible_host: 172.20.20.1
@@ -35,6 +38,9 @@ Routers:
       ansible_host: 172.10.10.1
       neighbor: 177.0.0.2
       my_hostname: RT_2
+      Rmap_nac: 'BLK-NAC'
+      RMap: 'Rmap_OUT'
+      RSeq: '10'
 
   vars:
     ansible_network_os: ios
@@ -47,4 +53,3 @@ Routers:
               3263646439636365320a653930386333343933396133396330633836343138646663666566643632
               6539
 
-  
