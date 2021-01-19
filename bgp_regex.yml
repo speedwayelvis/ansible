@@ -6,7 +6,7 @@
   hosts: RT_2
 
   tasks:
-  - name: Adicionar registro as_path
+  - name: Retirar registro as_path
     ios_config:
       lines: no ip as-path access-list 10
 
