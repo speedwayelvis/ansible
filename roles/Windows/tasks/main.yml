@@ -15,4 +15,4 @@
 
 - name: Mostra resultado
   debug:
-    msg: "{{ teste.updates }}"
+    msg: "{{ teste.updates.kb }}"
