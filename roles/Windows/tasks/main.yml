@@ -12,6 +12,7 @@
     - SecurityUpdates
     whitelist:
     - KB4580325
+    - KB4598230
     reboot: yes
 
 - name: Mostra resultado
