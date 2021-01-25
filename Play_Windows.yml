@@ -1,0 +1,9 @@
+---
+- name: Network LAB SPEEDWAY - WINDOWS 2019
+  gather_facts: false 
+  hosts: all
+
+  tasks:
+  - name: Executa a Role Windows 2019
+    include_role:
+      name: Windows
