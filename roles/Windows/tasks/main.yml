@@ -15,5 +15,5 @@
 
 - name: Mostra resultado
   debug:
-    msg: "{{ item.key }} - {{ item.value }}"
+    msg: "{{ item.key }} - {{ item.value.kb }}"
   loop: "{{ teste.updates | dict2items }}"
