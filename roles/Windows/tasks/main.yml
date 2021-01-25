@@ -11,4 +11,4 @@
     - SecurityUpdates
     whitelist:
     - KB4580325
-  tags: install_kb
+  
