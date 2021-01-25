@@ -4,7 +4,7 @@
     category_names: SecurityUpdates
     state: searched
     log_path: C:\ansible_wu.txt
-    register: teste
+  register: teste
 
 - name: Install only particular updates based on the KB numbers
   win_updates:
