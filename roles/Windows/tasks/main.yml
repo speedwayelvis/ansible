@@ -15,4 +15,5 @@
 
 - name: Mostra resultado
   debug:
-    msg: "{{ teste.updates.kb }}"
+    msg: "{{ item.key }} - {{ item.value }}"
+  loop: "{{ teste | dict2items }}"
