@@ -7,3 +7,4 @@
   - name: Executa a Role Windows 2019
     include_role:
       name: Windows
+      
