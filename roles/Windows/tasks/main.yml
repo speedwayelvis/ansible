@@ -15,4 +15,4 @@
 
 - name: Mostra resultado
   debug:
-    msg: "{{ teste.stdout_lines }}"
+    msg: "{{ teste.updates }}"
