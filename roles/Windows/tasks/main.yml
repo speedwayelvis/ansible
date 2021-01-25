@@ -4,6 +4,7 @@
     category_names: SecurityUpdates
     state: searched
     log_path: C:\ansible_wu.txt
+    register: teste
 
 - name: Install only particular updates based on the KB numbers
   win_updates:
@@ -11,4 +12,7 @@
     - SecurityUpdates
     whitelist:
     - KB4580325
-  
+
+- name: Mostra resultado
+  debug:
+    msg: "{{ teste.stdout_lines }}"
