@@ -6,14 +6,21 @@
     log_path: C:\ansible_wu.txt
   register: teste
 
-- name: Install only particular updates based on the KB numbers
+- name: Instala atualizações de sergurança baseada em KB's
   win_updates:
     category_name:
     - SecurityUpdates
-    whitelist:
-    - KB4580325
-    - KB4598230
-    reboot: yes
+    whitelist: "{{ KBs }}"
+    reboot: no
+
+# - name: Install only particular updates based on the KB numbers
+#   win_updates:
+#     category_name:
+#     - SecurityUpdates
+#     whitelist:
+#     - KB4580325
+#     - KB4598230
+#     reboot: yes
 
 - name: Mostra resultado
   debug:
