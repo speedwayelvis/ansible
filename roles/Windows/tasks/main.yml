@@ -8,9 +8,8 @@
 
 - name: Instala atualizações de sergurança baseada em KB's
   win_updates:
-    category_name:
-    - SecurityUpdates
-    whitelist: "{{ KBS }}"
+    category_name: "[{{ cat_update }}]"
+    whitelist: "[{{ kbs }}]"
     reboot: no
 
 # - name: Install only particular updates based on the KB numbers
