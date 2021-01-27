@@ -3,7 +3,7 @@
 - name: Network Getting Started First Playbook 
   connection: network_cli 
   gather_facts: false 
-  hosts: RT_2 
+  hosts: SW_LAB 
   tasks: 
     - name: Get config for IOS devices
       ios_facts: 
@@ -25,3 +25,10 @@
     #       - "{{tftpserver}}"
     #       - "{{arquivo}}"
     #       - "{{arquivo}}"
+    - name: Configurações do SNMP
+      ios_config: 
+        diff_against: running
+        lines: 
+          - snmp-server community speedway-snmp-ro RO
+          - snmp-server location LAB-SPEEDWAY
+      tags: snmp
