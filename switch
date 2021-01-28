@@ -8,6 +8,7 @@ RT_2 ansible_host=172.10.10.1 ansible_user=teste ansible_password=teste
 
 SW-ACESSO1 ansible_host=172.12.13.10
 SW-ACESSO2 ansible_host=172.12.13.20
+SW-ACESSO3 ansible_host=172.12.13.20
 
 [SW_LAB:vars]
 ansible_user=teste
