@@ -1,0 +1,40 @@
+---
+- name: Configurações Globais Padrão
+  ios_config: 
+    diff_against: running
+    lines: 
+      - service password-encryption
+      - ip ssh version 2
+      # - crypto key generate rsa modulus 1024
+      # - ip ssh source-interface loopback 0
+      - ntp server 10.0.0.192
+      # - track 50 ip route {{ track_probe }} 255.255.255.252 reachability
+      - hostname {{ hostname }}
+  tags: padrao
+
+- name: Configurações do SNMP
+  ios_config: 
+    diff_against: running
+    lines: 
+      - snmp-server community speedway-snmp-ro RO
+      - snmp-server location LAB-SPEEDWAY
+  tags: snmp
+
+- name: Configurações do Logging
+  ios_config: 
+    diff_against: running
+    lines: 
+      # - logging source-interface Loopback0
+      - logging 10.0.0.192
+  tags: logging
+
+- name: Acesso remoto via terminal
+
+  ios_config:
+    lines:
+      - transport input ssh
+    parents:
+      - line vty 1 4
+  tags: vty
+
+  
