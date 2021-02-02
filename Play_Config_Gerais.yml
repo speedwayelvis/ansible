@@ -1,4 +1,18 @@
 ---
+
+- name: Configurações Gerais para Switches
+  connection: network_cli 
+  gather_facts: false 
+  hosts: SW_LAB 
+  tasks: 
+    - name: Get config for IOS devices
+      ios_facts: 
+        gather_subset: all
+  
+    - name: Display the config 
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
+
 - name: Configurações Globais Padrão
   ios_config: 
     diff_against: running
@@ -9,7 +23,7 @@
       # - ip ssh source-interface loopback 0
       - ntp server 10.0.0.192
       # - track 50 ip route {{ track_probe }} 255.255.255.252 reachability
-      - hostname {{ hostname }}
+      - hostname {{ inventory_hostname }}
   tags: padrao
 
 - name: Configurações do SNMP
@@ -37,4 +51,3 @@
       - line vty 1 4
   tags: vty
 
-  
