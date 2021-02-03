@@ -47,6 +47,7 @@
       ios_config:
         lines:
           - transport input ssh
+          - session-timeout 30
         parents:
           - line vty 1 4
       tags: vty
