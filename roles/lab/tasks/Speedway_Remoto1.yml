@@ -5,13 +5,13 @@
       lines: description {{ desc1 }}, no shutdown
       parents: interface loopback 65
       before: interface loopback 65
-    when: link == "Outra"
+    when: link == "Secundario"
 
   - name: Remove interface de Gatilho
     ios_config:
       lines: shutdown
       parents: interface loopback 65
-    when: link == "Embratel"
+    when: link == "Principal"
 
   - name: Import tasks from hostnames.yml
     import_tasks: hostnames.yml
