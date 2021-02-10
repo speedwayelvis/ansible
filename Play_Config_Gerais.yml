@@ -84,7 +84,6 @@
       tags: logging
 
     - name: Acesso remoto via terminal
-
       ios_config:
         lines:
           - transport input ssh
@@ -92,4 +91,12 @@
         parents:
           - line vty 1 4
       tags: vty
+
+    - name: Acesso remoto via Console
+      ios_config:
+        lines:
+          - login authentication CONSOLE
+        parents:
+          - line console 0
+      tags: aaa_nova
 
