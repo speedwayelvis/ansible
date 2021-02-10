@@ -11,7 +11,7 @@
     ios_config:
       lines: shutdown
       parents: interface loopback 65
-    when: link == "Principal"
+    when: link == "Primario"
 
   - name: Import tasks from hostnames.yml
     import_tasks: hostnames.yml
