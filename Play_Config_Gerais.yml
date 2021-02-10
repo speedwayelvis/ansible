@@ -13,6 +13,47 @@
       debug:
         msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
 
+    - name: Autenticação Autorização e Conta
+      ios_config:
+        lines:
+          - aaa new-model
+          - aaa authentication login default group radius local
+          - aaa authentication login CONSOLE local
+          - aaa authentication enable default group radius enable
+          - aaa authorization console
+          - aaa authorization exec default group radius local
+          - aaa authorization exec CONSOLE local
+          - radius-server host 10.0.0.192 auth-port 1812 acct-port 1813
+          - radius-server key SpeedwaykeyRadius
+      tags: aaa
+
+    - name: Novo grupo radius
+      ios_config:
+        lines:
+          - aaa new-model
+          - radius server SPWAY-SERVER
+          - aaa group server radius SPWAY-RADIUS
+          - aaa authentication login default group SPWAY-RADIUS local
+          - aaa authentication enable default group SPWAY-RADIUS enable
+          - aaa authorization exec default group SPWAY-RADIUS local
+      tags: aaa_nova
+
+    - name: Adicionar as configurações do Radius
+      ios_config:
+        lines:
+          - address ipv4 10.0.0.192 auth-port 1812 acct-port 1813
+          - timeout 5
+          - retransmit 5
+          - key SpeedwaykeyRadius
+        parents: radius server SPWAY-SERVER
+      tags: aaa_nova
+
+    - name: Adicionar o servidor SPWAY-SERVER no grupo SPWAY-RADIUS
+      ios_config:
+        lines: server name SPWAY-SERVER
+        parents: aaa group server radius SPWAY-RADIUS
+      tags: aaa_nova
+    
     - name: Configurações Globais Padrão
       ios_config: 
         diff_against: running
