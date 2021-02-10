@@ -3,6 +3,7 @@ RT_1 ansible_host=172.20.20.1 ansible_user=teste ansible_password=teste
 Aracaju ansible_host=177.1.1.200 ansible_user=teste ansible_password=teste
 RT_2 ansible_host=172.10.10.1 ansible_user=teste ansible_password=teste
 Speedway_Remoto1 ansible_host=177.1.1.200 ansible_user=teste ansible_password=teste
+SWL2 ansible_host=172.16.0.111 ansible_user=teste ansible_password=teste
 
 
 [SW_LAB]
