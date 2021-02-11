@@ -34,8 +34,11 @@
           - radius server SPWAY-SERVER
           - aaa group server radius SPWAY-RADIUS
           - aaa authentication login default group SPWAY-RADIUS local
+          - aaa authentication login CONSOLE local
           - aaa authentication enable default group SPWAY-RADIUS enable
+          - aaa authorization console
           - aaa authorization exec default group SPWAY-RADIUS local
+          - aaa authorization exec CONSOLE local
       tags: aaa_nova
 
     - name: Adicionar as configurações do Radius
