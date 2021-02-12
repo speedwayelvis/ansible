@@ -7,5 +7,5 @@
   tasks:
   - name: Iniciar a Role de Autenticação
     include_role:
-      name: autenticacao
+      name: Autenticacao
         
