@@ -1,0 +1,5 @@
+---
+ansible_host: '172.16.0.111'
+interfaces: 
+  - interface: 'Ethernet0/2'
+  - interface: 'Ethernet0/3'
