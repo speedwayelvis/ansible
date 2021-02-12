@@ -1,0 +1,11 @@
+---
+- name: Network LAB-EVE - SEGURANÇA - AUTENTICAÇÃO
+  connection: network_cli 
+  gather_facts: false 
+  hosts: SWL2
+  
+  tasks:
+  - name: Iniciar a Role de Autenticação
+    include_role:
+      name: autenticacao
+        
