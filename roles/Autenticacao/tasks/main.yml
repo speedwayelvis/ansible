@@ -1,0 +1,5 @@
+---
+- name: Configurações de segurança para interfaces
+  ios_config:
+    diff_against: running
+    src: Conf_Auth_Interfaces.j2
