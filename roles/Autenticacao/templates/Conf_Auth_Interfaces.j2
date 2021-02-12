@@ -1,5 +1,7 @@
 {% for int in interfaces %}
 interface {{ int.interface }}
+    switchport
+    switchport mode access
     authentication priority dot1x
     authentication port-control auto
     dot1x pae authenticator
